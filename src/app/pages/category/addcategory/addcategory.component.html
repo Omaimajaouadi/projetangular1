@@ -1,0 +1,77 @@
+<div id="main-content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-lg-6 col-md-8 col-sm-12">
+          <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a> Create New Project</h2>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
+            <li class="breadcrumb-item">Categories</li>
+            <li class="breadcrumb-item active">Add Category</li>
+          </ul>
+        </div>
+
+    </div>
+
+    <div class="row clearfix">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="body">
+<!--            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">-->
+<!--            <div class="row clearfix">-->
+
+<!--              <div class="col-sm-12">-->
+<!--                <div class="form-group">-->
+<!--                  <input type="text" class="form-control" formControlName="nomcateg" placeholder="Category Name">-->
+<!--                <div *ngIf="submitted && f.nomcateg.errors">-->
+<!--                  <div *ngIf="f.nomcateg.errors.required">category Name is required</div>-->
+<!--                </div>-->
+<!--                </div>-->
+<!--              </div>-->
+
+
+
+<!--            <div class="row clearfix">-->
+<!--              <div class="col-12">-->
+<!--                <input type="file" class="dropify" formControlName="photo" (change)="selectfile($event)">-->
+<!--                <div class="mt-3"></div>-->
+<!--              </div>-->
+
+
+<!--              <div class="col-sm-12">-->
+<!--                <div class="mt-4">-->
+<!--                  <button type="submit" class="btn btn-primary">Create</button>-->
+<!--&lt;!&ndash;                  <button type="submit" class="btn btn-outline-secondary">Cancel</button>&ndash;&gt;-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            </div></form>-->
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                <label class="control-label sr-only">category name</label>
+                <input type="text" formControlName="nomcateg"  placeholder="category name">
+<!--                <div *ngIf="submitted && f.nomcateg.errors">-->
+<!--                  <div *ngIf="f.nomcateg.errors.required">category name is required</div>-->
+<!--                </div>-->
+              </div>
+
+
+              <div class="form-group">
+                <label  class="control-label sr-only">Photo</label>
+                <input type="file"  formControlName="photo" class="form-control" (change)="selectfile($event)"/>
+              </div>
+
+
+              <button type="submit" class="btn btn-primary btn-lg btn-block">ADD</button>
+
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

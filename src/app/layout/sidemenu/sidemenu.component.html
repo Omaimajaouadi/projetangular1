@@ -1,0 +1,70 @@
+<div id="left-sidebar" class="sidebar">
+  <div class="sidebar-scroll">
+    <div class="user-account">
+<!--      <img *ngIf="role==='technicien'"  src="http://localhost:8060/upload/files/{{technicien.photo}}"  class="rounded-circle user-photo" alt="User Profile Picture">-->
+<!--      <img *ngIf="role==='Gestionnaire'"  class="rounded-circle user-photo" alt="User Profile Picture">-->
+<!--      <img *ngIf="role==='Admin'"  src="../assets/images/user.png" class="rounded-circle user-photo" alt="User Profile Picture">-->
+      <img  src="../assets/images/user.png" class="rounded-circle user-photo" alt="User Profile Picture">
+      <div class="dropdown">
+        <span>Bonjour,</span>
+        <span>omaima</span>
+<!--        <a href="javascript:void(0);" class="dropdown-toggle user-name" data-toggle="dropdown"><strong>{{username}}</strong></a>-->
+        <ul class="dropdown-menu dropdown-menu-right account animated flipInY">
+          <li><a ><i class="icon-user"></i>My Profile</a></li>
+          <li class="divider"></li>
+<!--          <li><a (click)="logout()"><i class="icon-power"></i>Logout</a></li>-->
+          <li><a href="#"><i class="icon-power"></i>Logout</a></li>
+        </ul>
+      </div>
+      <hr>
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#hr_menu">Menu</a></li>
+        <!--<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#setting"><i class="icon-settings"></i></a></li>-->
+
+
+
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content p-l-0 p-r-0">
+        <div class="tab-pane animated fadeIn active" id="hr_menu">
+          <nav class="sidebar-nav">
+            <ul class="main-menu metismenu">
+              <li><a href="index.html"><i class="icon-speedometer"></i><span>Home</span></a></li>
+
+
+<!--              <li *ngIf="role==='Admin'">  -->
+              <li >
+                <a href="list-clients" class="has-arrow" ><i class="icon-users"></i><span>Clients</span></a>
+
+              </li>
+
+              <li>
+                <a href="products" class="has-arrow"><i class="icon-briefcase"></i><span>Products</span></a>
+              </li>
+
+
+                  <li><a href="category"><i class="icon-briefcase"></i><span>Catagories</span></a></li>
+                  <li><a href="marque"><span>Marques</span></a></li>
+
+
+
+              <li>
+                <a href="#Report" class="has-arrow"><i class="icon-bar-chart"></i><span>Rapport</span></a>
+                <ul>
+                  <li><a href="report-expense.html">Expense Report</a></li>
+                  <li><a href="report-invoice.html">Invoice Report</a></li>
+                </ul>
+              </li>
+              <li><a href="profil"><i class="icon-user"></i>Profil</a></li>
+
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

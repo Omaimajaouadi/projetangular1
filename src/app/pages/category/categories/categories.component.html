@@ -1,0 +1,116 @@
+<div id="main-content" xmlns:filterPipe="http://www.w3.org/1999/xhtml">
+  <div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-lg-6 col-md-8 col-sm-12">
+          <h2><a href="javascript:void(0);" class="btn btn-xs btn-link btn-toggle-fullwidth"><i class="fa fa-arrow-left"></i></a> Category</h2>
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html"><i class="icon-home"></i></a></li>
+            <li class="breadcrumb-item">Category</li>
+            <li class="breadcrumb-item active">List</li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="row clearfix">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="header">
+              <h2>Category List</h2>
+              <input placeholder="Type to filter" [(ngModel)]="searchToken"/>
+              <ul class="header-dropdown">
+                <li><a href="addcategory" class="btn btn-info" role="button">Ajouter</a></li>
+              </ul>
+            </div>
+            <div class="body">
+              <div class="table-responsive">
+                <table class="table table-hover js-basic-example dataTable table-custom table-striped m-b-0 c_list">
+                  <thead class="thead-dark">
+                  <tr >
+                    <th>image</th>
+                    <th>nom category</th>
+                    <th>category ID</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                  <tr *ngFor="let u of categories | filterPipe: searchToken">
+                    <td >
+
+                      <img  class="gallery-item" style="width:150px" src="http://localhost:8080/upload/files/{{u.photo}}" alt="">
+                    </td>
+                    <td>
+                      <h6 class="mb-0">{{u.nomcateg}}</h6>
+                    </td>
+                    <td>{{u.id}}</td>
+                    <td>
+
+                      <a (click)="recuper(u.id);getcategory(u.id);openModallg(categorie)" >
+                        <button type="button" class="btn btn-sm btn-outline-primary">
+                          <i class="icon-eye"></i>
+                        </button>
+                      </a>
+                      <a (click)="removecategorie(u.id)" >
+                        <button type="button" class="btn btn-sm btn-outline-danger js-sweetalert" title="Delete" data-type="confirm">
+                          <i class="icon-trash"></i>
+                        </button>
+                      </a>
+                      <a (click)="update(u.id)" ><button type="button" class="btn btn-sm btn-outline-secondary" title="Edit"><i class="icon-pencil"></i></button></a>
+
+                    </td>
+                    <!-- <td>
+                       <a (click)="removeGest(u.id)" ><button type="button" class="btn btn-sm btn-outline-danger js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o"></i></button></a>
+                       <a (click)="update(u.id)" ><button type="button" class="btn btn-sm btn-outline-secondary" title="Edit"><i class="fa fa-edit"></i></button></a>
+
+                     </td>-->
+<!--                    <td class="project-actions">-->
+<!--                      <a (click)="details(u.id)" class="btn btn-sm btn-outline-primary"><i class="icon-eye"></i></a>-->
+<!--                      <a (click)="update(u.id)" class="btn btn-sm btn-outline-success"><i class="icon-pencil"></i></a>-->
+<!--                      <a (click)="removeGest(u.id)" class="btn btn-sm btn-outline-danger js-sweetalert" title="Delete"-->
+<!--                         data-type="confirm"><i class="icon-trash"></i></a>-->
+<!--                    </td>-->
+                  </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<ng-template #categorie>
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Category details</h5>
+      <button type="button" class="close"(click)="modalRef.hide()"  aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="card">
+        <div class="header">
+          <h2><img class="gallery-item" style="width: 150px" src="http://localhost:8080/upload/files/{{category.photo}}" alt=""> </h2>
+        </div>
+
+        <div class="body">
+          <ul class="right_chat w_followers list-unstyled">
+
+                  <span class="name">{{category.nomcateg}}</span>
+
+
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</ng-template>
